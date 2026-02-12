@@ -36,7 +36,7 @@ const SolutionSection = () => {
         </motion.p>
 
         <motion.div
-          className="relative max-w-4xl mx-auto"
+          className="relative w-1/3 mx-auto"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}

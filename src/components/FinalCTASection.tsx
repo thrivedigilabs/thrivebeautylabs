@@ -2,77 +2,86 @@ import { ArrowRight, Star, Lock, Download, Check } from "lucide-react";
 import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-guides-mockup.jpg";
 
-const finalFeatures = [
+const features = [
   "True Tone Guide (70+ pages of shade mastery)",
   "Jetsetter Beauty Guide (50+ pages of travel expertise)",
   "Exclusive Bonus Resources",
   "Lifetime Access + Free Updates Forever",
-  "30-Day Money-Back Guarantee",
+  "7-Day Money-Back Guarantee",
 ];
 
 const FinalCTASection = () => {
   return (
-    <section id="final-cta" className="section-padding cream-gradient">
-      <div className="section-container text-center">
+    <section className="section-padding bg-background">
+      <div className="section-container">
         <motion.div
-          className="max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          className="max-w-xl mx-auto text-center"
         >
-          <img
-            src={heroImage}
-            alt="The complete ThriveBeautyLabs guide system"
-            className="rounded-3xl shadow-2xl mb-12 w-full max-w-2xl mx-auto"
-          />
-
-          <h2 className="font-heading text-section-mobile md:text-section mb-2">
+          {/* Heading */}
+          <h2 className="font-heading text-3xl md:text-4xl mb-2">
             The ThriveBeautyLabs Expert Guide System
           </h2>
-          <p className="eyebrow mb-8">Made for Indian Skin Tones</p>
 
-          <ul className="space-y-3 text-left max-w-md mx-auto mb-8">
-            {finalFeatures.map((f) => (
-              <li key={f} className="flex items-center gap-3 font-body">
-                <Check size={18} className="text-success flex-shrink-0" />
-                {f}
+          <p className="eyebrow mb-6 tracking-widest">
+            MADE FOR INDIAN SKIN TONES
+          </p>
+
+          {/* IMAGE — moved here & smaller */}
+          <img
+            src={heroImage}
+            alt="ThriveBeautyLabs Guide System"
+            className="w-full max-w-md mx-auto mb-10 rounded-2xl shadow-xl"
+          />
+
+          {/* Feature list */}
+          <ul className="space-y-4 text-left max-w-md mx-auto mb-10">
+            {features.map((item) => (
+              <li key={item} className="flex gap-3 items-start">
+                <Check className="text-success mt-1" size={18} />
+                <span className="font-body">{item}</span>
               </li>
             ))}
           </ul>
 
-          <div className="mb-6">
-            <p className="font-heading text-2xl text-muted-foreground line-through mb-1">₹2,999</p>
-            <p className="font-heading text-5xl md:text-7xl font-bold text-gradient-gold mb-2">₹799</p>
-            <div className="inline-block bg-destructive/10 text-destructive font-label font-semibold text-sm px-4 py-1.5 rounded-full -rotate-2">
+          {/* Pricing */}
+          <div className="mb-8">
+            <p className="text-muted-foreground line-through text-lg mb-1">
+              ₹2,999
+            </p>
+            <p className="font-heading text-6xl font-bold text-gradient-gold mb-2">
+              ₹799
+            </p>
+            <span className="inline-block bg-destructive/10 text-destructive text-sm font-semibold px-4 py-1.5 rounded-full">
               YOU SAVE: ₹2,200 (73% OFF)
-            </div>
+            </span>
           </div>
 
-          <a href="#" className="btn-primary text-xl !px-12 !py-6 pulse-cta inline-flex">
+          {/* CTA */}
+          <a
+            href="#"
+            className="btn-primary w-full text-lg py-6 flex items-center justify-center gap-2 rounded-full"
+          >
             GET INSTANT ACCESS NOW — ₹799
-            <ArrowRight size={22} />
+            <ArrowRight size={20} />
           </a>
 
-          <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm font-label text-muted-foreground">
+          {/* Trust indicators */}
+          <div className="flex justify-center gap-6 mt-6 text-sm text-muted-foreground flex-wrap">
             <span className="flex items-center gap-1.5">
-              <Star size={14} className="text-gold" /> 4.9/5 Rating (2,000+ Reviews)
+              <Star size={14} className="text-gold" />
+              4.9/5 Rating
             </span>
             <span className="flex items-center gap-1.5">
-              <Lock size={14} /> Secure Checkout
+              <Lock size={14} />
+              Secure Checkout
             </span>
             <span className="flex items-center gap-1.5">
-              <Download size={14} /> Instant Download
+              <Download size={14} />
+              Instant Download
             </span>
-          </div>
-
-          {/* Closing copy */}
-          <div className="mt-16 max-w-xl mx-auto">
-            <p className="font-body text-muted-foreground italic mb-4">Still thinking about it?</p>
-            <p className="font-body text-muted-foreground leading-relaxed">
-              Every day without these guides is another day of buying the wrong foundation shade,
-              wasting hours packing, and missing out on looking your absolute best. For less than the
-              cost of ONE wrong foundation purchase, you get a complete system that lasts forever.
-            </p>
           </div>
         </motion.div>
       </div>
